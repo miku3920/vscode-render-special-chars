@@ -30,7 +30,7 @@ BackgroundColor is taken from `editorUnicodeHighlight.background` theme color.
 
 ```json
 "render-special-chars.include": [
-   "0000-0009",
+   "0000-0008",
    "000B",
    "000C",
    "000E-001F",
