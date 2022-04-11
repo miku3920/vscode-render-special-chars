@@ -1,0 +1,90 @@
+{
+	"name": "vscode-render-special-chars",
+	"displayName": "Render Special Characters",
+	"description": "Displays any characters with UTFx",
+	"version": "1.0.0",
+	"publisher": "miku3920",
+	"engines": {
+		"vscode": "^1.66.0"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/miku3920/vscode-render-special-chars/issues/"
+	},
+	"repository": {
+		"url": "https://github.com/miku3920/vscode-render-special-chars/"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"unicode",
+		"highlighting",
+		"render",
+		"invisible",
+		"special",
+		"character",
+		"render-special-chars"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"configuration": [
+			{
+				"type": "object",
+				"title": "Render Special Character",
+				"properties": {
+					"render-special-chars.include": {
+						"description": "Render Characters UTFx code.",
+						"type": "array",
+						"default": [
+							"0000-0009",
+							"000B",
+							"000C",
+							"000E-001F",
+							"007F-009F",
+							"00A0-4DFF",
+							"A000-10FFFF"
+						]
+					},
+					"render-special-chars.except": {
+						"description": "Don't render Characters UTFx code.",
+						"type": "array",
+						"default": [
+							"000A",
+							"000D",
+							"0020-007E",
+							"4E00-9FFF"
+						]
+					},
+					"render-special-chars.border": {
+						"description": "border",
+						"type": "string",
+						"default": "1px solid; border-radius: 2px;"
+					},
+					"render-special-chars.borderColor": {
+						"description": "borderColor",
+						"type": "string"
+					},
+					"render-special-chars.color": {
+						"description": "textColor",
+						"type": "string"
+					},
+					"render-special-chars.backgroundColor": {
+						"description": "backgroundColor",
+						"type": "string"
+					}
+				}
+			}
+		]
+	},
+	"scripts": {},
+	"devDependencies": {
+		"@types/vscode": "^1.66.0",
+		"@types/node": "14.x",
+		"eslint": "^8.11.0",
+		"vsce": "^2.7.0"
+	}
+}
