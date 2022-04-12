@@ -55,6 +55,25 @@ function activate(context) {
 		return decorationTypes[contentText]
 	}
 
+	/**
+	 * @param {vscode.TextEditor} editor 
+	 */
+	function clearDecorations(editor) {
+		Object.values(decorationTypes).forEach(decorationType => {
+			editor.setDecorations(decorationType, [])
+		})
+	}
+
+	/**
+	 * @param {vscode.TextEditor} editor
+	 * @param {{ [s: string]: any }} decorations
+	 */
+	function setDecorations(editor, decorations) {
+		for (const [key, value] of Object.entries(decorations)) {
+			editor.setDecorations(getDecorationType(key), value)
+		}
+	}
+
 	/** 
 	 * @param {vscode.TextEditor} editor 
 	 */
@@ -73,9 +92,8 @@ function activate(context) {
 			decorations[match[0]] = decorations[match[0]] || []
 			decorations[match[0]].push({ range: new vscode.Range(pos, pos) })
 		}
-		for (const [key, value] of Object.entries(decorations)) {
-			editor.setDecorations(getDecorationType(key), value)
-		}
+		clearDecorations(editor)
+		setDecorations(editor, decorations)
 
 		clearTimeout(timeout)
 		timeout = null

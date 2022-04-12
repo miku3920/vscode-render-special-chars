@@ -2,7 +2,7 @@
 	"name": "vscode-render-special-chars",
 	"displayName": "Render Special Characters",
 	"description": "Displays any characters with UTFx",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "miku3920",
 	"engines": {
 		"vscode": "^1.66.0"
@@ -53,9 +53,15 @@
 						"description": "Don't render Characters UTFx code.",
 						"type": "array",
 						"default": [
+							"0009",
 							"000A",
 							"000D",
 							"0020-007E",
+							"02CA",
+							"02CB",
+							"02C7",
+							"02D9",
+							"3105-3129",
 							"4E00-9FFF"
 						]
 					},

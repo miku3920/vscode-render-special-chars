@@ -23,7 +23,7 @@ This extension contributes the following settings:
 
 * `render-special-chars.backgroundColor`: HTML color code.
 
-Color is taken from `editorUnicodeHighlight.border` theme color.
+Color and borderColor is taken from `editorUnicodeHighlight.border` theme color.
 BackgroundColor is taken from `editorUnicodeHighlight.background` theme color.
 
 ### Default Configuration
@@ -39,10 +39,16 @@ BackgroundColor is taken from `editorUnicodeHighlight.background` theme color.
    "A000-10FFFF"
 ],
 "render-special-chars.except": [
-   "000A",
-   "000D",
-   "0020-007E",
-   "4E00-9FFF"
+   "0009",       // TAB
+   "000A",       // LF
+   "000D",       // CR
+   "0020-007E",  // BASIC ASCII
+   "02CA",       // ˊ
+   "02CB",       // ˋ
+   "02C7",       // ˇ
+   "02D9",       // ˙
+   "3105-3129",  // Bopomofo (ㄅ~ㄦ)
+   "4E00-9FFF"   // CJK Unified Ideographs
 ],
 "render-special-chars.border": "1px solid; border-radius: 2px;",
 "render-special-chars.borderColor": null,
