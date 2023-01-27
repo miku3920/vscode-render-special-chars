@@ -2,7 +2,8 @@
 	"name": "vscode-render-special-chars",
 	"displayName": "Render Special Characters",
 	"description": "Displays any characters with UTFx",
-	"version": "1.0.3",
+	"icon": "ICON.png",
+	"version": "1.0.4",
 	"publisher": "miku3920",
 	"engines": {
 		"vscode": "^1.66.0"

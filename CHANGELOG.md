@@ -1,3 +1,7 @@
+## [1.0.4]
+
+- Fix icon
+
 ## [1.0.3]
 
 - Add commonly used symbol to "except"
