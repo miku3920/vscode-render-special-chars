@@ -1,3 +1,9 @@
+## [1.0.3]
+
+- Add commonly used symbol to "except"
+- Add icon
+- Update README.md
+
 ## [1.0.2]
 
 - Add clearDecorations

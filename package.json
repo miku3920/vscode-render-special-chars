@@ -2,7 +2,7 @@
 	"name": "vscode-render-special-chars",
 	"displayName": "Render Special Characters",
 	"description": "Displays any characters with UTFx",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"publisher": "miku3920",
 	"engines": {
 		"vscode": "^1.66.0"
@@ -57,12 +57,9 @@
 							"000A",
 							"000D",
 							"0020-007E",
-							"02CA",
-							"02CB",
-							"02C7",
-							"02D9",
 							"3105-3129",
-							"4E00-9FFF"
+							"4E00-9FFF",
+							"：；，、。？！〜（）〈〉《》【】「」『』"
 						]
 					},
 					"render-special-chars.border": {
@@ -86,11 +83,13 @@
 			}
 		]
 	},
-	"scripts": {},
+	"scripts": {
+		"publish": "vsce publish"
+	},
 	"devDependencies": {
 		"@types/vscode": "^1.66.0",
-		"@types/node": "14.x",
-		"eslint": "^8.11.0",
-		"vsce": "^2.7.0"
+		"@types/node": "18.x",
+		"eslint": "^8.32.0",
+		"vsce": "^2.15.0"
 	}
 }

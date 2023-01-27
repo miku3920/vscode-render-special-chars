@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ev="http://www.w3.org/2001/xml-events" width="256px" height="256px">
+  <mask id="myMask">
+    <rect x="0" y="0" width="256" height="256" fill="#FFFFFF" />
+    <rect x="66" y="117" width="256" height="256" fill="#000000" />
+  </mask>
+  <rect x="23" y="90" rx="2" ry="2" width="210" height="76" stroke="#98E0AD" stroke-width="8" fill="#00000000" mask="url(#myMask)"/>
+  <text x="68" y="170" stroke-width="2" style="fill: #98E0AD; font-size:64px; font-family:'Agency FB'; font-weight: bold">0x3920</text>
+</svg>
