@@ -1,3 +1,7 @@
+## [1.1.1] - 2024-05-26
+
+- Clear `decorationTypes` when updating configuration to apply new settings correctly.
+
 ## [1.1.0] - 2024-05-26
 
 - Added custom configurations for `excludedSchemes` and `updateDelay`.

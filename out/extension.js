@@ -43,6 +43,9 @@ function activate(context) {
   let customConfig, includeRegex, exceptRegex, offset, position, borderConfig,
     borderColor, textColor, backgroundColor, excludedSchemes, updateDelay
 
+  // Store decoration types
+  let decorationTypes = {}
+
   /**
    * Update the configuration settings.
    */
@@ -62,6 +65,8 @@ function activate(context) {
 
     excludedSchemes = customConfig.get('excludedSchemes')
     updateDelay = customConfig.get('updateDelay')
+
+    decorationTypes = {}
   }
 
   // Initial configuration update
@@ -78,8 +83,6 @@ function activate(context) {
    * Decoration management functions
    */
 
-  const decorationTypes = {}
-
   /**
    * Get or create a decoration type for a specific character.
    * @param {String} char
@@ -87,6 +90,7 @@ function activate(context) {
    */
   function getDecorationType(char) {
     const unicodeCode = char.codePointAt(0).toString(16).toUpperCase()
+
     if (!decorationTypes[unicodeCode]) {
       decorationTypes[unicodeCode] = vscode.window.createTextEditorDecorationType({
         rangeBehavior: vscode.DecorationRangeBehavior.ClosedClosed,
@@ -99,6 +103,7 @@ function activate(context) {
         },
       })
     }
+
     return decorationTypes[unicodeCode]
   }
 
