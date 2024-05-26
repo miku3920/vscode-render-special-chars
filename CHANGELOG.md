@@ -1,21 +1,27 @@
-## [1.0.4]
+## [1.1.0] - 2024-05-26
 
-- Fix icon
+- Added custom configurations for `excludedSchemes` and `updateDelay`.
+- Added `position` configuration to specify decoration placement (`before` or `after` the character).
+- Moved extension icon to `images/` directory.
 
-## [1.0.3]
+## [1.0.4] - 2023-01-28
 
-- Add commonly used symbol to "except"
-- Add icon
-- Update README.md
+- Fixed icon.
 
-## [1.0.2]
+## [1.0.3] - 2023-01-28
 
-- Add clearDecorations
+- Added commonly used symbols to "except".
+- Added icon.
+- Updated README.md.
 
-## [1.0.1]
+## [1.0.2] - 2022-04-12
 
-- Remove TAB unicode
+- Added `clearDecorations` function.
 
-## [1.0.0]
+## [1.0.1] - 2022-04-12
 
-- Initial release
+- Removed TAB unicode.
+
+## [1.0.0] - 2022-04-12
+
+- Initial release.

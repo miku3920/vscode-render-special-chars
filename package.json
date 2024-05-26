@@ -1,96 +1,123 @@
 {
-	"name": "vscode-render-special-chars",
-	"displayName": "Render Special Characters",
-	"description": "Displays any characters with UTFx",
-	"icon": "ICON.png",
-	"version": "1.0.4",
-	"publisher": "miku3920",
-	"engines": {
-		"vscode": "^1.66.0"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/miku3920/vscode-render-special-chars/issues/"
-	},
-	"repository": {
-		"url": "https://github.com/miku3920/vscode-render-special-chars/"
-	},
-	"categories": [
-		"Other"
-	],
-	"keywords": [
-		"unicode",
-		"highlighting",
-		"render",
-		"invisible",
-		"special",
-		"character",
-		"render-special-chars"
-	],
-	"activationEvents": [
-		"onStartupFinished"
-	],
-	"main": "./out/extension",
-	"contributes": {
-		"configuration": [
-			{
-				"type": "object",
-				"title": "Render Special Character",
-				"properties": {
-					"render-special-chars.include": {
-						"description": "Render Characters UTFx code.",
-						"type": "array",
-						"default": [
-							"0000-0008",
-							"000B",
-							"000C",
-							"000E-001F",
-							"007F-009F",
-							"00A0-4DFF",
-							"A000-10FFFF"
-						]
-					},
-					"render-special-chars.except": {
-						"description": "Don't render Characters UTFx code.",
-						"type": "array",
-						"default": [
-							"0009",
-							"000A",
-							"000D",
-							"0020-007E",
-							"3105-3129",
-							"4E00-9FFF",
-							"：；，、。？！〜（）〈〉《》【】「」『』"
-						]
-					},
-					"render-special-chars.border": {
-						"description": "border",
-						"type": "string",
-						"default": "1px solid; border-radius: 2px;"
-					},
-					"render-special-chars.borderColor": {
-						"description": "borderColor",
-						"type": "string"
-					},
-					"render-special-chars.color": {
-						"description": "textColor",
-						"type": "string"
-					},
-					"render-special-chars.backgroundColor": {
-						"description": "backgroundColor",
-						"type": "string"
-					}
-				}
-			}
-		]
-	},
-	"scripts": {
-		"publish": "vsce publish"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.66.0",
-		"@types/node": "18.x",
-		"eslint": "^8.32.0",
-		"vsce": "^2.15.0"
-	}
+  "name": "vscode-render-special-chars",
+  "displayName": "Render Special Characters",
+  "description": "Displays any characters with UTFx",
+  "icon": "./images/ICON.png",
+  "version": "1.1.0",
+  "publisher": "miku3920",
+  "engines": {
+    "vscode": "^1.66.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miku3920/vscode-render-special-chars/issues/"
+  },
+  "repository": {
+    "url": "https://github.com/miku3920/vscode-render-special-chars/"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "unicode",
+    "highlighting",
+    "render",
+    "invisible",
+    "special",
+    "character",
+    "render-special-chars"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": [
+      {
+        "type": "object",
+        "title": "Render Special Character",
+        "properties": {
+          "render-special-chars.include": {
+            "description": "An array of UTFx codes or characters that will be prominently displayed.",
+            "type": "array",
+            "default": [
+              "0000-0008",
+              "000B",
+              "000C",
+              "000E-001F",
+              "007F-009F",
+              "00A0-4DFF",
+              "A000-10FFFF"
+            ]
+          },
+          "render-special-chars.except": {
+            "description": "An array of characters specified in UTFx or as individual characters that will not be prominently displayed, regardless of whether they are included in the \"include\" array.",
+            "type": "array",
+            "default": [
+              "0009",
+              "000A",
+              "000D",
+              "0020-007E",
+              "3105-3129",
+              "4E00-9FFF",
+              "：；，、。？！〜（）〈〉《》【】「」『』"
+            ]
+          },
+          "render-special-chars.position": {
+            "description": "Position of the decoration relative to the character ('before' or 'after').",
+            "type": "string",
+            "enum": [
+              "before",
+              "after"
+            ],
+            "default": "before"
+          },
+          "render-special-chars.border": {
+            "description": "A CSS string that defines the border style for the highlighted characters.",
+            "type": "string",
+            "default": "1px solid; border-radius: 2px;"
+          },
+          "render-special-chars.borderColor": {
+            "description": "A color code for the border of highlighted characters.",
+            "type": "string"
+          },
+          "render-special-chars.color": {
+            "description": "A color code for the text of highlighted characters.",
+            "type": "string"
+          },
+          "render-special-chars.backgroundColor": {
+            "description": "A color code for the background of highlighted characters.",
+            "type": "string"
+          },
+          "render-special-chars.excludedSchemes": {
+            "description": "Array of URI schemes to exclude from rendering.",
+            "type": "array",
+            "default": [
+              "output",
+              "debug",
+              "git"
+            ]
+          },
+          "render-special-chars.updateDelay": {
+            "description": "Delay time in milliseconds for updating decorations.",
+            "type": "number",
+            "default": 500
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.66.0",
+    "@vscode/vsce": "^2.26.1",
+    "eslint": "^9.3.0"
+  }
 }
